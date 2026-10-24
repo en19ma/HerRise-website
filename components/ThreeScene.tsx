@@ -1,0 +1,5 @@
+'use client';
+import {Canvas} from '@react-three/fiber';
+import {Float, MeshDistortMaterial, Sphere, Torus} from '@react-three/drei';
+function Art(){return <><ambientLight intensity={1.8}/><directionalLight position={[3,4,5]} intensity={2.5}/><Float speed={1.4} rotationIntensity={.8} floatIntensity={1.3}><Sphere args={[1.05,64,64]} position={[.1,.05,0]}><MeshDistortMaterial color="#f4a18d" roughness={.28} metalness={.08} distort={.28} speed={2}/></Sphere></Float><Float speed={1.8} rotationIntensity={1.3} floatIntensity={1}><Torus args={[1.35,.045,16,100]} rotation={[.8,.5,-.5]}><meshStandardMaterial color="#6c487d" metalness={.35} roughness={.3}/></Torus></Float><Float speed={2} floatIntensity={1.8}><Sphere args={[.19,32,32]} position={[-1.1,.95,.2]}><meshStandardMaterial color="#9cae8e" roughness={.3}/></Sphere></Float><Float speed={1.2} floatIntensity={1.2}><Sphere args={[.12,32,32]} position={[1.2,-.9,.2]}><meshStandardMaterial color="#e4bf69" roughness={.35}/></Sphere></Float></>}
+export default function ThreeScene(){return <Canvas camera={{position:[0,0,4.2],fov:45}} dpr={[1,1.5]}><Art/></Canvas>}
